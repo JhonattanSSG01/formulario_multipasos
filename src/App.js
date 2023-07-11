@@ -1,24 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState} from "react";
+import FirstForm from "./components/FirstForm";
+import SecondForm from "./components/SecondForm";
+import ThirdForm from "./components/ThirdForm";
+import FourForm from "./components/FourForm";
+import FiveForm from "./components/FiveForm";
 
-function App() {
+import FormContext from "./context/FormContext";
+
+const App = () => {
+  const  [step, setStep] = useState("firstform");
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <FormContext.Provider value={{ step,setStep }}>
+      <div class="container">
+        {step === 'firstform' && <FirstForm />}
+        {step === 'secondform' && <SecondForm />}
+        {step === 'thirdform' && <ThirdForm />}
+        {step === 'fourform' && <FourForm />}
+        {step === 'fiveform' && <FiveForm />}
+      </div>
+    </FormContext.Provider>
   );
 }
 
