@@ -41,7 +41,7 @@ const FiveForm = () => {
             <fieldset>
               <label htmlFor="course">Curso</label>
               <div className="container-icon-input">
-                <GrTechnology className="icon" />
+                <GrTechnology className="icon"/>
                 <Field
                   id="course"
                   name="course"

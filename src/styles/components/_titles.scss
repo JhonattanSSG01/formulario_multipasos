@@ -2,7 +2,7 @@
 
 @mixin titles() {
   .title {
-    width: 90%;
+    width: 80%;
     background-color: rgba($color: va.$btn-bg, $alpha: 0.9);
     margin: auto;
     text-align: center;
@@ -25,7 +25,7 @@
           margin: auto;
         }
         to {
-          width: 80%;
+          width: 90%;
           margin: auto;
         }
       }

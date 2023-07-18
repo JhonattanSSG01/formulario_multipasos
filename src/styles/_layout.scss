@@ -12,6 +12,15 @@
   background-repeat: no-repeat;
   background-size: cover;
   overflow: hidden;
+  &::before {
+    content: "";
+    width: 100%;
+    background-color: rgba($color: va.$black, $alpha: 0.4);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    z-index: 1;
+  }
   main {
     width: 100vw;
     margin: auto;
@@ -25,14 +34,15 @@
     display: flex;
     flex-direction: column;
     box-shadow: inset 10px 15px 25px rgba($color: va.$black, $alpha: 0.5);
+    z-index: 2;
     @include ti.titles();
-      small{
-        margin-left: .5rem;
-        font-size: .9rem;
-        font-style: italic;
-        vertical-align: middle;
-        color: va.$small;
-      }
+    small {
+      margin-left: 0.5rem;
+      font-size: 0.9rem;
+      font-style: italic;
+      vertical-align: middle;
+      color: va.$small;
+    }
     @include bt.button();
     @media only screen and (max-width: 500px) {
       width: 90vw;
