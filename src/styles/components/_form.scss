@@ -2,15 +2,23 @@
 @use "./inputs" as in;
 @use "./error" as er;
 @use "./radio" as ra;
+@use "./icon" as ic;
 @use "../variables" as va;
 
-form{
+form {
   fieldset {
     border: none;
     display: flex;
     flex-direction: column;
     margin: 1rem 0;
     padding: 0 1rem;
+    .container-icon-input {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      @include ic.icon(va.$btn-bg);
+    }
+
     @include la.label();
     @include in.input();
     @include er.error();

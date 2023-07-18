@@ -2,7 +2,7 @@
 
 @mixin label() {
   label, .gender {
-    margin: 0.5rem 0 0.2rem 0;
+    margin: 0.5rem 0 .8rem 0;
     letter-spacing: 2px;
     color: va.$textLabel;
     font-weight: 400;

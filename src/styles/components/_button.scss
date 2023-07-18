@@ -1,3 +1,4 @@
+@use "../components/icon" as ic;
 @use "../variables" as va;
 
 @mixin button() {
@@ -39,6 +40,12 @@
       &:hover::before {
         width: inherit;
       }
+    }
+    .submit{
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      @include ic.icon(va.$white);
     }
   }
 }

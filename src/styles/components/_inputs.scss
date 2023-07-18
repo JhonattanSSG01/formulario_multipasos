@@ -1,10 +1,12 @@
 @use "../variables" as va;
+@use "../components/comment" as co;
 
 @mixin input() {
   input[type="text"],
   input[type="email"],
   input[type="date"],
   select {
+    flex-grow: 1;
     padding: 0.4rem 0.2rem;
     outline: none;
     border: 0;
@@ -23,14 +25,6 @@
     appearance: none;
   }
 
-  .coment{
-    padding: 1rem .5rem;
-    border: 0;
-    border-radius: 10px;
-    background-color: rgba($color: va.$white, $alpha: .7);
-    &:focus-visible{
-      outline: 2px solid rgba($color: va.$black, $alpha: .5);
-    }
-  }
+  @include co.comment();
   
-}
+};

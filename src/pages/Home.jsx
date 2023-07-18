@@ -1,8 +1,10 @@
-import { Link } from "react-router-dom";  
+import { Link } from "react-router-dom";
 const Home = () => {
   return (
     <div className="pagePrincipal home">
-      <h2>Formulario Universal</h2>
+      <div className="title">
+        <h2>Formulario Universal</h2>
+      </div>
       <p>
         <span>Bienvenidos!!!</span> Este formulario tiene un objetivo principal,
         tu fan de este anime podrás enviar tus datos y un comentario positivo o
@@ -16,6 +18,6 @@ const Home = () => {
       </div>
     </div>
   );
-}
+};
 
-export default Home
+export default Home;

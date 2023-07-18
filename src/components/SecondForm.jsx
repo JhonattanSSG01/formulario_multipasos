@@ -4,6 +4,10 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import { secondFormSchema } from "../schemas/secondFormSchema";
 import { Link } from "react-router-dom";
 
+import { IoPersonCircleOutline } from "react-icons/io5";
+import { IoPersonCircle } from "react-icons/io5";
+import { AiTwotoneMail } from "react-icons/ai";
+
 // Inicialización de valores del formulario
 const initialValues = {
   middleName: "",
@@ -14,9 +18,11 @@ const initialValues = {
 const SecondForm = () => {
   return (
     <main>
-      <h2>
-        Datos Personales <small>2-5</small>
-      </h2>
+      <div className="title">
+        <h2>
+          Datos Personales <small>2-5</small>
+        </h2>
+      </div>
       <div className="container-form">
         <Formik
           initialValues={initialValues}
@@ -25,13 +31,16 @@ const SecondForm = () => {
           <Form autoComplete="off">
             <fieldset>
               <label htmlFor="middleName">Segundo Nombre</label>
-              <Field
-                id="middleName"
-                name="middleName"
-                type="text"
-                placeholder="Ingresa segundo nombre (opcional)"
-                autoFocus
-              />
+              <div className="container-icon-input">
+                <IoPersonCircle className="icon" />
+                <Field
+                  id="middleName"
+                  name="middleName"
+                  type="text"
+                  placeholder="Ingresa segundo nombre (opcional)"
+                  autoFocus
+                />
+              </div>
               <ErrorMessage
                 name="middleName"
                 component="div"
@@ -40,12 +49,15 @@ const SecondForm = () => {
             </fieldset>
             <fieldset>
               <label htmlFor="surName">Segundo apellido</label>
-              <Field
-                id="surName"
-                name="surName"
-                type="text"
-                placeholder="Ingresa segundo apellido (opcional)"
-              />
+              <div className="container-icon-input">
+                <IoPersonCircleOutline className="icon" />
+                <Field
+                  id="surName"
+                  name="surName"
+                  type="text"
+                  placeholder="Ingresa segundo apellido (opcional)"
+                />
+              </div>
               <ErrorMessage
                 name="surName"
                 component="div"
@@ -54,12 +66,15 @@ const SecondForm = () => {
             </fieldset>
             <fieldset>
               <label htmlFor="email">Correo Electrónico</label>
-              <Field
-                id="email"
-                name="email"
-                type="email"
-                placeholder="Ingrese correo electrónico*"
-              />
+              <div className="container-icon-input">
+                <AiTwotoneMail className="icon" />
+                <Field
+                  id="email"
+                  name="email"
+                  type="email"
+                  placeholder="Ingrese correo electrónico*"
+                />
+              </div>
               <ErrorMessage
                 name="email"
                 component="div"
