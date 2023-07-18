@@ -1,0 +1,44 @@
+@use "../variables" as va;
+
+@mixin button() {
+  .btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    .button {
+      width: 10rem;
+      padding: 1rem;
+      border-radius: 30rem;
+      font-size: clamp(1rem, 4vw, 1.3rem);
+      border: none;
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+      text-decoration: none;
+      text-align: center;
+      background-color: va.$btn-bg;
+      box-shadow: 6px 6px 12px va.$btn-bg, -6px -6px 12px va.$btn-bg;
+      cursor: pointer;
+      color: va.$white;
+      letter-spacing: 3px;
+
+      &::before {
+        content: "";
+        width: 0;
+        height: 4rem;
+        border-radius: 9999px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: va.$btn-bg-hover;
+        color: va.$textLabel;
+        transition: 0.5s ease;
+        display: block;
+        z-index: -1;
+      }
+      &:hover::before {
+        width: inherit;
+      }
+    }
+  }
+}

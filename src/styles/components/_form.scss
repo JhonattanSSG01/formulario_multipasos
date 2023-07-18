@@ -1,0 +1,19 @@
+@use "./label" as la;
+@use "./inputs" as in;
+@use "./error" as er;
+@use "./radio" as ra;
+@use "../variables" as va;
+
+form{
+  fieldset {
+    border: none;
+    display: flex;
+    flex-direction: column;
+    margin: 1rem 0;
+    padding: 0 1rem;
+    @include la.label();
+    @include in.input();
+    @include er.error();
+    @include ra.btnRadio();
+  }
+}

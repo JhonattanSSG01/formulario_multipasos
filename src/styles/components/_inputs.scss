@@ -1,0 +1,36 @@
+@use "../variables" as va;
+
+@mixin input() {
+  input[type="text"],
+  input[type="email"],
+  input[type="date"],
+  select {
+    padding: 0.4rem 0.2rem;
+    outline: none;
+    border: 0;
+    border-bottom: 1px solid va.$color-link;
+    background-color: transparent;
+    font-size: clamp(.8rem, 4vw, 1.3rem);
+    font-family: va.$main-font;
+    color: va.$color-link;
+    &::placeholder{
+      color: rgba($color: va.$color-link, $alpha: .6);
+      font-size: clamp(.7rem, 4vw, 1rem);
+    }
+  }
+  .select{
+    font-size: clamp(.7rem, 4vw, 1rem);
+    appearance: none;
+  }
+
+  .coment{
+    padding: 1rem .5rem;
+    border: 0;
+    border-radius: 10px;
+    background-color: rgba($color: va.$white, $alpha: .7);
+    &:focus-visible{
+      outline: 2px solid rgba($color: va.$black, $alpha: .5);
+    }
+  }
+  
+}

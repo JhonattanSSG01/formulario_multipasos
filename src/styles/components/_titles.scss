@@ -1,0 +1,21 @@
+@use "../variables" as va;
+
+@mixin titles(){
+  h1, h2 {
+    width: 70%;
+    margin: auto;
+    padding: 1rem;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: clamp(.8rem, 4vw, 1.8rem);
+    font-weight: 400;
+    color: va.$white;
+    background-color: rgba($color: va.$btn-bg, $alpha: 0.9);
+    letter-spacing: 5px;
+    border-radius: 10px;
+    @media only screen and (max-width: 500px) {
+      text-align: left;
+    }
+  };
+
+};

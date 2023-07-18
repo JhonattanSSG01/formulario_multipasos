@@ -1,0 +1,11 @@
+@use "../variables" as va;
+
+.container-form {
+    width: 90%;
+    margin: 2rem auto;
+    padding: 2rem;
+    border: 1px solid va.$black;
+    background-color: rgba($color: va.$form, $alpha: 0.8);
+    border-radius: 10px;
+ };
+  

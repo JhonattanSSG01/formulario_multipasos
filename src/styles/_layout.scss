@@ -1,0 +1,41 @@
+@use "./variables" as va;
+@use "./components/button" as bt;
+@use "./components/titles" as ti;
+
+.container {
+  font-family: va.$main-font;
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  place-content: center;
+  background-image: url(va.$container-bg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+  main {
+    width: 100vw;
+    margin: auto;
+    padding: 1.5rem 1rem;
+    max-width: 600px;
+    border-radius: 20px;
+    background-image: url(va.$container-form-bg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    box-shadow: inset 10px 15px 25px rgba($color: va.$black, $alpha: 0.5);
+    @include ti.titles();
+      small{
+        margin-left: .5rem;
+        font-size: .9rem;
+        font-style: italic;
+        vertical-align: middle;
+        color: va.$small;
+      }
+    @include bt.button();
+    @media only screen and (max-width: 500px) {
+      width: 90vw;
+    }
+  }
+}
