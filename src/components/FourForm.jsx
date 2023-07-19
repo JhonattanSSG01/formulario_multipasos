@@ -7,15 +7,12 @@ import { Link } from "react-router-dom";
 import { MdOutlineNumbers } from "react-icons/md";
 import { AiOutlineFieldNumber } from "react-icons/ai";
 import { FaList } from "react-icons/fa";
+import { TestContext } from "../context/TestContext";
 
-// Inicialización de valores del formulario
-const initialValues = {
-  phoneNumber: "",
-  typeId: "",
-  id: "",
-};
 
 const FourForm = () => {
+  const { formData, updateFormData } = useContext(TestContext);
+
   return (
     <main>
       <div className="title">
@@ -24,7 +21,15 @@ const FourForm = () => {
         </h2>
       </div>
       <div className="container-form">
-        <Formik initialValues={initialValues} validationSchema={fourFormSchema}>
+        <Formik
+          initialValues={formData || ""}
+          validationSchema={fourFormSchema}
+          validate={(values) => {
+            updateFormData("phoneNumber", values.phoneNumber),
+            updateFormData("typeId", values.typeId),
+            updateFormData("id", values.id);
+          }}
+        >
           <Form autoComplete="off">
             <fieldset>
               <label htmlFor="phoneNumber">Número Celular</label>

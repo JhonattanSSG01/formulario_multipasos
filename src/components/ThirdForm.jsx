@@ -7,15 +7,11 @@ import { Link } from "react-router-dom";
 import { BiSolidMapPin } from "react-icons/bi";
 import { BiSolidCity } from "react-icons/bi";
 import { BsGenderAmbiguous } from "react-icons/bs";
-
-// Inicialización de valores del formulario
-const initialValues = {
-  country: "",
-  city: "",
-  gender: "",
-};
+import { TestContext } from "../context/TestContext";
 
 const ThirdForm = () => {
+  const { formData, updateFormData } = useContext(TestContext);
+
   return (
     <main>
       <div className="title">
@@ -25,8 +21,13 @@ const ThirdForm = () => {
       </div>
       <div className="container-form">
         <Formik
-          initialValues={initialValues}
+          initialValues={formData || ""}
           validationSchema={thirdFormSchema}
+          validate={(values) => {
+            updateFormData("country", values.country),
+            updateFormData("city", values.city),
+            updateFormData("gender", values.gender);
+          }}
         >
           <Form autoComplete="off">
             <fieldset>

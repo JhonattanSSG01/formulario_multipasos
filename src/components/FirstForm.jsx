@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { ErrorMessage, Field, Form, Formik } from "formik";
 
 import { firstFormSchema } from "../schemas/firstFormSchema";
@@ -8,11 +8,6 @@ import { Link } from "react-router-dom";
 import { IoPersonCircleOutline } from "react-icons/io5";
 import { IoPersonCircle } from "react-icons/io5";
 import { TbListNumbers } from "react-icons/tb";
-import { GrFormNext } from "react-icons/gr";
-
-const onSubmit = (values) => {
-  console.log(values);
-};
 
 const FirstForm = () => {
   const { formData, updateFormData } = useContext(TestContext);
@@ -25,8 +20,17 @@ const FirstForm = () => {
         </h2>
       </div>
       <div className="container-form">
-        <Formik initialValues={formData} validationSchema={firstFormSchema}>
-          <Form autoComplete="off">
+        <Formik
+          initialValues={formData || ""}
+          validationSchema={firstFormSchema}
+          // onSubmit={(values) => updateFormData("firstName", e.target.value)}
+          validate={values => {
+            updateFormData("firstName", values.firstName),
+            updateFormData("lastName", values.lastName),
+            updateFormData("age", values.age)
+          }}
+        >
+          <Form autoComplete="off" noValidate>
             <fieldset>
               <label htmlFor="firstName">Primer Nombre</label>
               <div className="container-icon-input">

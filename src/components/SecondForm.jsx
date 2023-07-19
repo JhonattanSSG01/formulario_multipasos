@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 
 import { secondFormSchema } from "../schemas/secondFormSchema";
@@ -7,15 +7,11 @@ import { Link } from "react-router-dom";
 import { IoPersonCircleOutline } from "react-icons/io5";
 import { IoPersonCircle } from "react-icons/io5";
 import { AiTwotoneMail } from "react-icons/ai";
-
-// Inicialización de valores del formulario
-const initialValues = {
-  middleName: "",
-  surName: "",
-  email: "",
-};
+import { TestContext } from "../context/TestContext";
 
 const SecondForm = () => {
+  const { formData, updateFormData } = useContext(TestContext);
+
   return (
     <main>
       <div className="title">
@@ -25,10 +21,15 @@ const SecondForm = () => {
       </div>
       <div className="container-form">
         <Formik
-          initialValues={initialValues}
+          initialValues={formData || ""}
           validationSchema={secondFormSchema}
+          validate={(values) => {
+            updateFormData("middleName", values.middleName),
+            updateFormData("surName", values.surName),
+            updateFormData("email", values.email);
+          }}
         >
-          <Form autoComplete="off">
+          <Form autoComplete="off" noValidate>
             <fieldset>
               <label htmlFor="middleName">Segundo Nombre</label>
               <div className="container-icon-input">

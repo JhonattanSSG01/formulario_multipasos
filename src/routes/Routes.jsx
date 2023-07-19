@@ -14,10 +14,6 @@ import App from "../App";
 // Rutas
 export const router = createBrowserRouter([
   {
-    path: '/home',
-    element: <Home />
-  },
-  {
     path: '/firstForm',
     element: <FirstForm />
   },

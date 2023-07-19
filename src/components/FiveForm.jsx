@@ -9,13 +9,10 @@ import { GrTechnology } from "react-icons/gr";
 import { BiSolidCommentDetail } from "react-icons/bi";
 import { AiOutlineSend } from "react-icons/ai";
 
-// Inicialización de valores del formulario
-const initialValues = {
-  date: "",
-  course: "",
-};
 
 const FiveForm = () => {
+  const { formData, updateFormData } = useContext(TestContext);
+
   return (
     <main>
       <div className="title">
@@ -24,7 +21,15 @@ const FiveForm = () => {
         </h2>
       </div>
       <div className="container-form">
-        <Formik initialValues={initialValues} validationSchema={fiveFormSchema}>
+        <Formik
+          initialValues={formData || ""}
+          validationSchema={fiveFormSchema}
+          validate={(values) => {
+            updateFormData("date", values.date),
+            updateFormData("course", values.course),
+            updateFormData("comment", values.comment);
+          }}
+        >
           <Form autoComplete="off">
             <fieldset>
               <label htmlFor="date">Fecha De Nacimiento</label>
@@ -41,7 +46,7 @@ const FiveForm = () => {
             <fieldset>
               <label htmlFor="course">Curso</label>
               <div className="container-icon-input">
-                <GrTechnology className="icon"/>
+                <GrTechnology className="icon" />
                 <Field
                   id="course"
                   name="course"

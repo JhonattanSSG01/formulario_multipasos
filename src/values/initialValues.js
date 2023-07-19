@@ -1,7 +1,7 @@
 export const initialValues = {
   firstName: "",
-  lastName: "asdasd",
-  age: "55",
+  lastName: "",
+  age: "",
   middleName: "",
   surName: "",
   email: "",
