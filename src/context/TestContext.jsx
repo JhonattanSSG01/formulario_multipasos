@@ -4,7 +4,7 @@ import { initialValues } from "../values/initialValues";
 export const TestContext = createContext();
 
 export const FormProvider = ({ children }) => {
-  const [formData, setFormData] = useState({initialValues});
+  const [formData, setFormData] = useState(initialValues);
 
   // Función para actualizar el estado del formulario
   const updateFormData = (key, formData) => {

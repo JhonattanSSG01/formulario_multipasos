@@ -8,6 +8,7 @@ import { IoCalendarNumber } from "react-icons/io5";
 import { GrTechnology } from "react-icons/gr";
 import { BiSolidCommentDetail } from "react-icons/bi";
 import { AiOutlineSend } from "react-icons/ai";
+import { TestContext } from "../context/TestContext";
 
 
 const FiveForm = () => {
@@ -86,10 +87,10 @@ const FiveForm = () => {
         <Link to="/fourForm" className="button">
           Anterior
         </Link>
-        <button className="button submit">
+        <Link to="/confirm" className="button submit">
           <AiOutlineSend className="icon" />
           Enviar
-        </button>
+        </Link>
       </div>
     </main>
   );

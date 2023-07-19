@@ -10,35 +10,40 @@ import FiveForm from "../components/FiveForm";
 import Home from "../pages/Home";
 import NotFound from "../pages/NotFound";
 import App from "../App";
+import ConfirmData from "../components/ConfirmData";
 
 // Rutas
 export const router = createBrowserRouter([
   {
-    path: '/firstForm',
-    element: <FirstForm />
+    path: "/firstForm",
+    element: <FirstForm />,
   },
   {
-    path: '/secondForm',
-    element: <SecondForm />
+    path: "/secondForm",
+    element: <SecondForm />,
   },
   {
-    path: '/thirdForm',
-    element: <ThirdForm />
+    path: "/thirdForm",
+    element: <ThirdForm />,
   },
   {
-    path: '/fourForm',
-    element: <FourForm />
+    path: "/fourForm",
+    element: <FourForm />,
   },
   {
-    path: '/fiveForm',
-    element: <FiveForm />
+    path: "/fiveForm",
+    element: <FiveForm />,
   },
   {
-    path: '*',
-    element: <NotFound />
+    path: "/confirm",
+    element: <ConfirmData />,
   },
   {
-    path: '/',
-    element: <App />
+    path: "*",
+    element: <NotFound />,
+  },
+  {
+    path: "/",
+    element: <App />,
   },
 ]);
