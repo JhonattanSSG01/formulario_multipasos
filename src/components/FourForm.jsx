@@ -26,75 +26,88 @@ const FourForm = () => {
           validationSchema={fourFormSchema}
           validate={(values) => {
             updateFormData("phoneNumber", values.phoneNumber),
-            updateFormData("typeId", values.typeId),
-            updateFormData("id", values.id);
+              updateFormData("typeId", values.typeId),
+              updateFormData("id", values.id);
           }}
         >
-          <Form autoComplete="off">
-            <fieldset>
-              <label htmlFor="phoneNumber">Número Celular</label>
-              <div className="container-icon-input">
-                <MdOutlineNumbers className="icon" />
-                <Field
-                  id="phoneNumber"
+          {({ values }) => (
+            <Form autoComplete="off">
+              <fieldset>
+                <label htmlFor="phoneNumber">Número Celular</label>
+                <div className="container-icon-input">
+                  <MdOutlineNumbers className="icon" />
+                  <Field
+                    id="phoneNumber"
+                    name="phoneNumber"
+                    type="text"
+                    placeholder="Ingresa número de celular*"
+                    autoFocus
+                  />
+                </div>
+                <ErrorMessage
                   name="phoneNumber"
-                  type="text"
-                  placeholder="Ingresa número de celular*"
-                  autoFocus
+                  component="div"
+                  className="error-message"
                 />
-              </div>
-              <ErrorMessage
-                name="phoneNumber"
-                component="div"
-                className="animate__animated animate__backInRight animate__delay-.5s error-message"
-              />
-            </fieldset>
-            <fieldset>
-              <label htmlFor="typeId">Tipo De Documento</label>
-              <div className="container-icon-input">
-                <FaList className="icon" />
-                <Field id="typeId" name="typeId" as="select" className="select">
-                  <option value="">Seleccione el tipo de documento</option>
-                  <option value="cc">Cédula de Ciudadanía</option>
-                  <option value="ce">Cédula de Extranjería</option>
-                  <option value="id">Docuemnto de Identidad</option>
-                  <option value="pa">Pasaporte</option>
-                  <option value="lc">Licencia de Conducir</option>
-                </Field>
-              </div>
-              <ErrorMessage
-                name="typeId"
-                component="div"
-                className="animate__animated animate__backInRight animate__delay-.5s error-message"
-              />
-            </fieldset>
-            <fieldset>
-              <label htmlFor="id">Documento</label>
-              <div className="container-icon-input">
-                <AiOutlineFieldNumber className="icon" />
-                <Field
-                  id="id"
+              </fieldset>
+              <fieldset>
+                <label htmlFor="typeId">Tipo De Documento</label>
+                <div className="container-icon-input">
+                  <FaList className="icon" />
+                  <Field
+                    id="typeId"
+                    name="typeId"
+                    as="select"
+                    className="select"
+                  >
+                    <option value="" selected>Seleccione el tipo de documento*</option>
+                    <option value="cc">Cédula de Ciudadanía</option>
+                    <option value="ce">Cédula de Extranjería</option>
+                    <option value="id">Docuemnto de Identidad</option>
+                    <option value="pa">Pasaporte</option>
+                    <option value="lc">Licencia de Conducir</option>
+                  </Field>
+                </div>
+                <ErrorMessage
+                  name="typeId"
+                  component="div"
+                  className="error-message"
+                />
+              </fieldset>
+              <fieldset>
+                <label htmlFor="id">Documento</label>
+                <div className="container-icon-input">
+                  <AiOutlineFieldNumber className="icon" />
+                  <Field
+                    id="id"
+                    name="id"
+                    type="text"
+                    placeholder="Ingresa número del documento*"
+                  />
+                </div>
+                <ErrorMessage
                   name="id"
-                  type="text"
-                  placeholder="Ingresa número del documento*"
+                  component="div"
+                  className="error-message"
                 />
+              </fieldset>
+              <div className="btn">
+                <Link to="/thirdForm" className="button">
+                  Anterior
+                </Link>
+                <button type="submit" className="button">
+                  {values.phoneNumber && values.typeId && values.id ? (
+                    <Link to="/fiveForm" className="button-link">
+                      Siguiente
+                    </Link>
+                  ) : (
+                    "Siguiente"
+                  )}
+                </button>
               </div>
-              <ErrorMessage
-                name="id"
-                component="div"
-                className="animate__animated animate__backInRight animate__delay-.5s error-message"
-              />
-            </fieldset>
-          </Form>
+            </Form>
+          )}
         </Formik>
-      </div>
-      <div className="btn">
-        <Link to="/thirdForm" className="button">
-          Anterior
-        </Link>
-        <Link to="/fiveForm" className="button">
-          Siguiente
-        </Link>
       </div>
     </main>
   );

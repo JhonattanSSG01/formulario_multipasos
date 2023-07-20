@@ -23,74 +23,80 @@ const FirstForm = () => {
         <Formik
           initialValues={formData || ""}
           validationSchema={firstFormSchema}
-          // onSubmit={(values) => updateFormData("firstName", e.target.value)}
-          validate={values => {
+          validate={(values) => {
             updateFormData("firstName", values.firstName),
-            updateFormData("lastName", values.lastName),
-            updateFormData("age", values.age)
+              updateFormData("lastName", values.lastName),
+              updateFormData("age", values.age);
           }}
         >
-          <Form autoComplete="off" noValidate>
-            <fieldset>
-              <label htmlFor="firstName">Primer Nombre</label>
-              <div className="container-icon-input">
-                <IoPersonCircleOutline className="icon" />
-                <Field
-                  id="firstName"
+          {({ values }) => (
+            <Form autoComplete="off">
+              <fieldset>
+                <label htmlFor="firstName">Primer Nombre</label>
+                <div className="container-icon-input">
+                  <IoPersonCircleOutline className="icon" />
+                  <Field
+                    id="firstName"
+                    name="firstName"
+                    type="text"
+                    placeholder="Ingresa primer nombre*"
+                    autoFocus
+                  />
+                </div>
+                <ErrorMessage
                   name="firstName"
-                  type="text"
-                  placeholder="Ingresa primer nombre*"
-                  autoFocus
+                  component="div"
+                  className="error-message"
                 />
-              </div>
-
-              <ErrorMessage
-                name="firstName"
-                component="div"
-                className="animate__animated animate__backInRight animate__delay-.5s error-message"
-              />
-            </fieldset>
-            <fieldset>
-              <label htmlFor="lastName">Primer Apellido</label>
-              <div className="container-icon-input">
-                <IoPersonCircle className="icon" />
-                <Field
-                  id="lastName"
+              </fieldset>
+              <fieldset>
+                <label htmlFor="lastName">Primer Apellido</label>
+                <div className="container-icon-input">
+                  <IoPersonCircle className="icon" />
+                  <Field
+                    id="lastName"
+                    name="lastName"
+                    type="text"
+                    placeholder="Ingresa primer apellido*"
+                  />
+                </div>
+                <ErrorMessage
                   name="lastName"
-                  type="text"
-                  placeholder="Ingresa primer apellido*"
+                  component="div"
+                  className="error-message"
                 />
-              </div>
-              <ErrorMessage
-                name="lastName"
-                component="div"
-                className="animate__animated animate__backInRight animate__delay-.5s error-message"
-              />
-            </fieldset>
-            <fieldset>
-              <label htmlFor="age">Edad</label>
-              <div className="container-icon-input">
-                <TbListNumbers className="icon" />
-                <Field
-                  id="age"
+              </fieldset>
+              <fieldset>
+                <label htmlFor="age">Edad</label>
+                <div className="container-icon-input">
+                  <TbListNumbers className="icon" />
+                  <Field
+                    id="age"
+                    name="age"
+                    type="text"
+                    placeholder="Ingresa la edad*"
+                  />
+                </div>
+                <ErrorMessage
                   name="age"
-                  type="text"
-                  placeholder="Ingresa la edad*"
+                  component="div"
+                  className="error-message"
                 />
+              </fieldset>
+              <div className="btn">
+                <button type="submit" className="button">
+                  {values.firstName && values.lastName && values.age ? (
+                    <Link to="/secondForm" className="button-link">
+                      Siguiente
+                    </Link>
+                  ) : (
+                    "Siguiente"
+                  )}
+                </button>
               </div>
-              <ErrorMessage
-                name="age"
-                component="div"
-                className="animate__animated animate__backInRight animate__delay-.5s error-message"
-              />
-            </fieldset>
-          </Form>
+            </Form>
+          )}
         </Formik>
-      </div>
-      <div className="btn">
-        <Link to="/secondForm" className="button">
-          Siguiente
-        </Link>
       </div>
     </main>
   );
