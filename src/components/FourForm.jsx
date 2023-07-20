@@ -3,15 +3,15 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 
 import { fourFormSchema } from "../schemas/fourFormSchema";
 import { Link } from "react-router-dom";
+import { DataContext } from "../context/DataContext";
 
 import { MdOutlineNumbers } from "react-icons/md";
 import { AiOutlineFieldNumber } from "react-icons/ai";
 import { FaList } from "react-icons/fa";
-import { TestContext } from "../context/TestContext";
-
+import { BsArrowBarRight, BsArrowBarLeft } from "react-icons/bs";
 
 const FourForm = () => {
-  const { formData, updateFormData } = useContext(TestContext);
+  const { formData, updateFormData } = useContext(DataContext);
 
   return (
     <main>
@@ -60,7 +60,9 @@ const FourForm = () => {
                     as="select"
                     className="select"
                   >
-                    <option value="" selected>Seleccione el tipo de documento*</option>
+                    <option value="" selected>
+                      Seleccione el tipo de documento*
+                    </option>
                     <option value="cc">Cédula de Ciudadanía</option>
                     <option value="ce">Cédula de Extranjería</option>
                     <option value="id">Docuemnto de Identidad</option>
@@ -92,10 +94,11 @@ const FourForm = () => {
                 />
               </fieldset>
               <div className="btn">
-                <Link to="/thirdForm" className="button">
+                <Link to="/thirdForm" className="button button-icon">
+                  <BsArrowBarLeft className="icon" />
                   Anterior
                 </Link>
-                <button type="submit" className="button">
+                <button type="submit" className="button button-icon">
                   {values.phoneNumber && values.typeId && values.id ? (
                     <Link to="/fiveForm" className="button-link">
                       Siguiente
@@ -103,6 +106,7 @@ const FourForm = () => {
                   ) : (
                     "Siguiente"
                   )}
+                  <BsArrowBarRight className="icon" />
                 </button>
               </div>
             </Form>

@@ -3,14 +3,15 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 
 import { thirdFormSchema } from "../schemas/thirdFormSchema";
 import { Link } from "react-router-dom";
+import { DataContext } from "../context/DataContext";
 
 import { BiSolidMapPin } from "react-icons/bi";
 import { BiSolidCity } from "react-icons/bi";
 import { BsGenderAmbiguous } from "react-icons/bs";
-import { TestContext } from "../context/TestContext";
+import { BsArrowBarRight, BsArrowBarLeft } from "react-icons/bs";
 
 const ThirdForm = () => {
-  const { formData, updateFormData } = useContext(TestContext);
+  const { formData, updateFormData } = useContext(DataContext);
 
   return (
     <main>
@@ -118,10 +119,11 @@ const ThirdForm = () => {
                 />
               </fieldset>
               <div className="btn">
-                <Link to="/secondForm" className="button">
+                <Link to="/secondForm" className="button button-icon">
+                  <BsArrowBarLeft className="icon" />
                   Anterior
                 </Link>
-                <button type="submit" className="button">
+                <button type="submit" className="button button-icon">
                   {values.country && values.city && values.gender ? (
                     <Link to="/fourForm" className="button-link">
                       Siguiente
@@ -129,6 +131,7 @@ const ThirdForm = () => {
                   ) : (
                     "Siguiente"
                   )}
+                  <BsArrowBarRight className="icon" />
                 </button>
               </div>
             </Form>

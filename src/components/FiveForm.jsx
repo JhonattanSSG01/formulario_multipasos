@@ -3,15 +3,15 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 
 import { fiveFormSchema } from "../schemas/fiveFormSchema";
 import { Link } from "react-router-dom";
+import { DataContext } from "../context/DataContext";
 
 import { IoCalendarNumber } from "react-icons/io5";
 import { GrTechnology } from "react-icons/gr";
 import { BiSolidCommentDetail } from "react-icons/bi";
-import { AiOutlineSend } from "react-icons/ai";
-import { TestContext } from "../context/TestContext";
+import { BsArrowBarRight, BsArrowBarLeft } from "react-icons/bs";
 
 const FiveForm = () => {
-  const { formData, updateFormData } = useContext(TestContext);
+  const { formData, updateFormData } = useContext(DataContext);
 
   return (
     <main>
@@ -81,10 +81,11 @@ const FiveForm = () => {
                 />
               </fieldset>
               <div className="btn">
-                <Link to="/fourForm" className="button">
+                <Link to="/fourForm" className="button button-icon">
+                  <BsArrowBarLeft className="icon" />
                   Anterior
                 </Link>
-                <button type="submit" className="button">
+                <button type="submit" className="button button-icon">
                   {values.date && values.course && values.comment ? (
                     <Link to="/confirm" className="button-link">
                       Siguiente
@@ -92,6 +93,7 @@ const FiveForm = () => {
                   ) : (
                     "Siguiente"
                   )}
+                  <BsArrowBarRight className="icon" />
                 </button>
               </div>
             </Form>

@@ -1,7 +1,7 @@
 import { createContext, useState } from "react";
 import { initialValues } from "../values/initialValues";
 
-export const TestContext = createContext();
+export const DataContext = createContext();
 
 export const FormProvider = ({ children }) => {
   const [formData, setFormData] = useState(initialValues);
@@ -15,9 +15,9 @@ export const FormProvider = ({ children }) => {
   };
   
   return (
-    <TestContext.Provider value={{ formData, updateFormData }}>
+    <DataContext.Provider value={{ formData, updateFormData }}>
       {children}
-    </TestContext.Provider>
+    </DataContext.Provider>
   );
 }
 

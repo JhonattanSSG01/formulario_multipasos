@@ -1,16 +1,17 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { ErrorMessage, Field, Form, Formik } from "formik";
 
 import { firstFormSchema } from "../schemas/firstFormSchema";
-import { TestContext } from "../context/TestContext";
+import { DataContext } from "../context/DataContext";
 import { Link } from "react-router-dom";
 
 import { IoPersonCircleOutline } from "react-icons/io5";
 import { IoPersonCircle } from "react-icons/io5";
 import { TbListNumbers } from "react-icons/tb";
+import { BsArrowBarRight } from "react-icons/bs";
 
 const FirstForm = () => {
-  const { formData, updateFormData } = useContext(TestContext);
+  const { formData, updateFormData } = useContext(DataContext);
 
   return (
     <main>
@@ -84,7 +85,7 @@ const FirstForm = () => {
                 />
               </fieldset>
               <div className="btn">
-                <button type="submit" className="button">
+                <button type="submit" className="button button-icon">
                   {values.firstName && values.lastName && values.age ? (
                     <Link to="/secondForm" className="button-link">
                       Siguiente
@@ -92,6 +93,7 @@ const FirstForm = () => {
                   ) : (
                     "Siguiente"
                   )}
+                  <BsArrowBarRight className="icon" />
                 </button>
               </div>
             </Form>

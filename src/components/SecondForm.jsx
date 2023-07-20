@@ -3,14 +3,15 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 
 import { secondFormSchema } from "../schemas/secondFormSchema";
 import { Link } from "react-router-dom";
+import { DataContext } from "../context/DataContext";
 
 import { IoPersonCircleOutline } from "react-icons/io5";
 import { IoPersonCircle } from "react-icons/io5";
 import { AiTwotoneMail } from "react-icons/ai";
-import { TestContext } from "../context/TestContext";
+import { BsArrowBarRight, BsArrowBarLeft } from "react-icons/bs";
 
 const SecondForm = () => {
-  const { formData, updateFormData } = useContext(TestContext);
+  const { formData, updateFormData } = useContext(DataContext);
 
   return (
     <main>
@@ -83,11 +84,12 @@ const SecondForm = () => {
                   className="error-message"
                 />
               </fieldset>
-              <div className="btn">
-                <Link to="/firstForm" className="button">
+              <div className="btn ">
+                <Link to="/firstForm" className="button button-icon">
+                  <BsArrowBarLeft className="icon" />
                   Anterior
                 </Link>
-                <button type="submit" className="button">
+                <button type="submit" className="button button-icon">
                   {values.email ? (
                     <Link to="/thirdForm" className="button-link">
                       Siguiente
@@ -95,6 +97,7 @@ const SecondForm = () => {
                   ) : (
                     "Siguiente"
                   )}
+                  <BsArrowBarRight className="icon" />
                 </button>
               </div>
             </Form>
