@@ -13,5 +13,5 @@ export const initialValues = {
   id: "",
   date: "",
   course: "",
-  comment: ""
+  comment: "zxcxzczzxczxczxczxczxczxczxzzxcasdasaasdasdadasdadadadssdas"
 };

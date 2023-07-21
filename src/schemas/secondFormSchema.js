@@ -11,4 +11,10 @@ export const secondFormSchema = Yup.object().shape({
     .email("Ingrese un correo valido")
     .max(50, "El correo no puede superar los 50 carácteres")
     .required("El campo es obligatorio")
+    .test('com-extension', 'El correo debe ser .com', (value) => {
+      if (value) {
+        return /@\w+\.+[a-z]/.test(value.toLowerCase());
+      }
+      return true;
+    }),
 })

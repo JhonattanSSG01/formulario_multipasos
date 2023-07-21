@@ -34,9 +34,7 @@ const ConfirmData = () => {
             <summary>
               Primer Nombre <IoIosArrowForward className="icon" />
             </summary>
-            <p>
-              <h4>{formData.firstName}</h4>
-            </p>
+            <p>{formData.firstName}</p>
           </details>
         </article>
         <article>
@@ -44,9 +42,7 @@ const ConfirmData = () => {
             <summary>
               Primer Apellido <IoIosArrowForward className="icon" />
             </summary>
-            <p>
-              <h4>{formData.lastName}</h4>
-            </p>
+            <p>{formData.lastName}</p>
           </details>
         </article>
         <article>
@@ -54,9 +50,7 @@ const ConfirmData = () => {
             <summary>
               Segundo Nombre <IoIosArrowForward className="icon" />
             </summary>
-            <p>
-              <h4>{formData.middleName ? formData.middleName : "Ninguno"}</h4>
-            </p>
+            <p>{formData.middleName ? formData.middleName : "Ninguno"}</p>
           </details>
         </article>
         <article>
@@ -65,9 +59,7 @@ const ConfirmData = () => {
               Segundo Apellido
               <IoIosArrowForward className="icon" />
             </summary>
-            <p>
-              <h4>{formData.surName ? formData.surName : "Ninguno"}</h4>
-            </p>
+            <p>{formData.surName ? formData.surName : "Ninguno"}</p>
           </details>
         </article>
         <article>
@@ -75,9 +67,7 @@ const ConfirmData = () => {
             <summary>
               Edad <IoIosArrowForward className="icon" />
             </summary>
-            <p>
-              <h4>{formData.age}</h4>
-            </p>
+            <p>{formData.age}</p>
           </details>
         </article>
         <article>
@@ -85,9 +75,7 @@ const ConfirmData = () => {
             <summary>
               Email <IoIosArrowForward className="icon" />
             </summary>
-            <p>
-              <h4>{formData.email}</h4>
-            </p>
+            <textarea disabled>{formData.email}</textarea>
           </details>
         </article>
         <article>
@@ -95,9 +83,7 @@ const ConfirmData = () => {
             <summary>
               Fecha De Nacimiento <IoIosArrowForward className="icon" />
             </summary>
-            <p>
-              <h4>{formData.date}</h4>
-            </p>
+            <p>{formData.date}</p>
           </details>
         </article>
         <article>
@@ -105,9 +91,7 @@ const ConfirmData = () => {
             <summary>
               País <IoIosArrowForward className="icon" />
             </summary>
-            <p>
-              <h4>{formData.country}</h4>
-            </p>
+            <p>{formData.country}</p>
           </details>
         </article>
         <article>
@@ -115,9 +99,7 @@ const ConfirmData = () => {
             <summary>
               Ciudad <IoIosArrowForward className="icon" />
             </summary>
-            <p>
-              <h4>{formData.city}</h4>
-            </p>
+            <p>{formData.city}</p>
           </details>
         </article>
         <article>
@@ -125,9 +107,7 @@ const ConfirmData = () => {
             <summary>
               Genéro <IoIosArrowForward className="icon" />
             </summary>
-            <p>
-              <h4>{formData.gender}</h4>
-            </p>
+            <p>{formData.gender}</p>
           </details>
         </article>
         <article>
@@ -135,9 +115,7 @@ const ConfirmData = () => {
             <summary>
               Número Celular <IoIosArrowForward className="icon" />
             </summary>
-            <p>
-              <h4>{formData.phoneNumber}</h4>
-            </p>
+            <p>{formData.phoneNumber}</p>
           </details>
         </article>
         <article>
@@ -145,9 +123,7 @@ const ConfirmData = () => {
             <summary>
               Tipo De Documento <IoIosArrowForward className="icon" />
             </summary>
-            <p>
-              <h4>{formData.typeId}</h4>
-            </p>
+            <p>{formData.typeId}</p>
           </details>
         </article>
         <article>
@@ -155,9 +131,7 @@ const ConfirmData = () => {
             <summary>
               Documento <IoIosArrowForward className="icon" />
             </summary>
-            <p>
-              <h4>{formData.id}</h4>
-            </p>
+            <p>{formData.id}</p>
           </details>
         </article>
         <article>
@@ -165,9 +139,7 @@ const ConfirmData = () => {
             <summary>
               Curso <IoIosArrowForward className="icon" />
             </summary>
-            <p>
-              <h4>{formData.course}</h4>
-            </p>
+            <p>{formData.course}</p>
           </details>
         </article>
         <article>
@@ -175,20 +147,18 @@ const ConfirmData = () => {
             <summary>
               Comentario <IoIosArrowForward className="icon" />
             </summary>
-            <p>
-              <h4>{formData.comment}</h4>
-            </p>
+            <textarea disabled>{formData.comment}</textarea>
           </details>
         </article>
       </div>
       <div className="btn">
         <Link to="/firstForm" className="button-link button button-icon">
-          <MdOutlineCancel className="icon " />
+          <MdOutlineCancel className="icon" />
           Cancelar
         </Link>
         <Link to="/" className="button submit button-icon" onClick={onSubmit}>
           Enviar
-        <BiSend className="icon" />
+          <BiSend className="icon" />
         </Link>
       </div>
     </main>

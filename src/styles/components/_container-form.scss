@@ -36,7 +36,8 @@
       font-weight: 600;
       cursor: pointer;
     }
-    p {
+    p, textarea {
+      width: 100%;
       padding: 0.8rem;
       margin-top: 1rem;
       font-size: clamp(.8rem, 5vw, 1rem);
