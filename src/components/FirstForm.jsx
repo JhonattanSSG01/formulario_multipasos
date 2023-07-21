@@ -9,6 +9,7 @@ import { IoPersonCircleOutline } from "react-icons/io5";
 import { IoPersonCircle } from "react-icons/io5";
 import { TbListNumbers } from "react-icons/tb";
 import { BsArrowBarRight } from "react-icons/bs";
+import { Button } from "../stories/Button/Button";
 
 const FirstForm = () => {
   const { formData, updateFormData } = useContext(DataContext);
@@ -94,10 +95,7 @@ const FirstForm = () => {
                     <BsArrowBarRight className="icon" />
                   </Link>
                 ) : (
-                  <button type="submit" className="button button-icon">
-                    Siguiente
-                    <BsArrowBarRight className="icon" />
-                  </button>
+                  <Button label="siguiente" primary="false"></Button>
                 )}
               </div>
             </Form>
