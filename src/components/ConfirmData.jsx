@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { DataContext } from "../context/DataContext";
+import { Formik, Form } from "formik";
 
 import { BiSend } from "react-icons/bi";
 import { IoIosArrowForward } from "react-icons/io";
@@ -9,7 +10,19 @@ import { Link } from "react-router-dom";
 const ConfirmData = () => {
   const { formData } = useContext(DataContext);
 
-  console.log(formData);
+  const onSubmit = () => {
+    Swal.fire({
+      position: "center",
+      icon: "success",
+      text: "Tus datos han sido enviados exitosamente",
+      showConfirmButton: false,
+      timer: 1500,
+    });
+    Object.keys(formData).forEach((key) => {
+      formData[key] = "";
+    });
+  };
+
   return (
     <main className="main-confirm">
       <div className="title">
@@ -169,16 +182,14 @@ const ConfirmData = () => {
         </article>
       </div>
       <div className="btn">
-        <button type="submit" className="button button-icon">
+        <Link to="/firstForm" className="button-link button button-icon">
           <MdOutlineCancel className="icon " />
-          <Link to="/firstForm" className="button-link">
-            Cancelar
-          </Link>
-        </button>
-        <button type="submit" className="button submit button-icon">
-          <BiSend className="icon" />
+          Cancelar
+        </Link>
+        <Link to="/" className="button submit button-icon" onClick={onSubmit}>
           Enviar
-        </button>
+        <BiSend className="icon" />
+        </Link>
       </div>
     </main>
   );

@@ -8,7 +8,7 @@ export const fourFormSchema = Yup.object().shape({
     .typeError('El campo número celular solo admite números')
     .required("El campo es obligatorio"),
   typeId: Yup.string()
-    .oneOf(["cc", "ce", "id", "pa", "lc"], "Debes sellecionar un tipo de docuemnto valido")
+    .oneOf(["CC", "CE", "ID", "PA", "LC"], "Debes sellecionar un tipo de docuemnto valido")
     .required("El campo es obligatorio"),
   id: Yup.number()
     .positive("El documento tiene que ser positiva")

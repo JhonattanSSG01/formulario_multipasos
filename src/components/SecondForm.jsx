@@ -89,16 +89,19 @@ const SecondForm = () => {
                   <BsArrowBarLeft className="icon" />
                   Anterior
                 </Link>
-                <button type="submit" className="button button-icon">
-                  {values.email ? (
+                {values.email ? (
+                  <button type="submit" className="button button-icon">
                     <Link to="/thirdForm" className="button-link">
                       Siguiente
                     </Link>
-                  ) : (
-                    "Siguiente"
-                  )}
-                  <BsArrowBarRight className="icon" />
-                </button>
+                    <BsArrowBarRight className="icon" />
+                  </button>
+                ) : (
+                  <button type="submit" className="button button-icon">
+                    Siguiente
+                    <BsArrowBarRight className="icon" />
+                  </button>
+                )}
               </div>
             </Form>
           )}

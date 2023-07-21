@@ -8,7 +8,7 @@ export const fiveFormSchema = Yup.object().shape({
     .max(20, "El curso no puede superar los 20 carácteres")
     .required("El campo es obligatorio"),
   comment: Yup.string()
-    .min(4, "El comentario tiene que tener al menos 20 carácteres")
-    .max(200, "El comentario no puede superar los 200 carácteres")
+    .min(100, "El comentario tiene que tener al menos 200 carácteres")
+    .max(400, "El comentario no puede superar los 400 carácteres")
     .required("El campo es obligatorio")
 });

@@ -63,11 +63,11 @@ const FourForm = () => {
                     <option value="" selected>
                       Seleccione el tipo de documento*
                     </option>
-                    <option value="cc">Cédula de Ciudadanía</option>
-                    <option value="ce">Cédula de Extranjería</option>
-                    <option value="id">Docuemnto de Identidad</option>
-                    <option value="pa">Pasaporte</option>
-                    <option value="lc">Licencia de Conducir</option>
+                    <option value="CC">Cédula de Ciudadanía</option>
+                    <option value="CE">Cédula de Extranjería</option>
+                    <option value="ID">Docuemnto de Identidad</option>
+                    <option value="PA">Pasaporte</option>
+                    <option value="lLC">Licencia de Conducir</option>
                   </Field>
                 </div>
                 <ErrorMessage
@@ -98,16 +98,19 @@ const FourForm = () => {
                   <BsArrowBarLeft className="icon" />
                   Anterior
                 </Link>
-                <button type="submit" className="button button-icon">
-                  {values.phoneNumber && values.typeId && values.id ? (
+                {values.phoneNumber && values.typeId && values.id ? (
+                  <button type="submit" className="button button-icon">
                     <Link to="/fiveForm" className="button-link">
                       Siguiente
                     </Link>
-                  ) : (
-                    "Siguiente"
-                  )}
-                  <BsArrowBarRight className="icon" />
-                </button>
+                    <BsArrowBarRight className="icon" />
+                  </button>
+                ) : (
+                  <button type="submit" className="button button-icon">
+                    Siguiente
+                    <BsArrowBarRight className="icon" />
+                  </button>
+                )}
               </div>
             </Form>
           )}
