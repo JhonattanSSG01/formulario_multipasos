@@ -152,7 +152,7 @@ const ConfirmData = () => {
         </article>
       </div>
       <div className="btn">
-        <Link to="/firstForm" className="button-link button button-icon">
+        <Link to="/firstForm" className="button button-icon">
           <MdOutlineCancel className="icon" />
           Cancelar
         </Link>

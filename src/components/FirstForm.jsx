@@ -86,12 +86,13 @@ const FirstForm = () => {
               </fieldset>
               <div className="btn">
                 {values.firstName && values.lastName && values.age ? (
-                  <button type="submit" className="button button-icon">
-                    <Link to="/secondForm" className="button-link">
-                      Siguiente
-                    </Link>
+                  <Link
+                    to="/secondForm"
+                    className="button button-icon"
+                  >
+                    Siguiente
                     <BsArrowBarRight className="icon" />
-                  </button>
+                  </Link>
                 ) : (
                   <button type="submit" className="button button-icon">
                     Siguiente

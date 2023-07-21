@@ -86,12 +86,10 @@ const FiveForm = () => {
                   Anterior
                 </Link>
                 {values.date && values.course && values.comment ? (
-                  <button type="submit" className="button button-icon">
-                    <Link to="/confirm" className="button-link">
-                      Siguiente
-                    </Link>
+                  <Link to="/confirm" className="button button-icon">
+                    Siguiente
                     <BsArrowBarRight className="icon" />
-                  </button>
+                  </Link>
                 ) : (
                   <button type="submit" className="button button-icon">
                     Siguiente

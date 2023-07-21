@@ -28,12 +28,7 @@
       cursor: pointer;
       letter-spacing: 3px;
       text-decoration: none;
-      
-      .button-link{
-        text-decoration: none;
-        color: va.$white;
-      }
-
+    
       &::before {
         content: "";
         width: 0;

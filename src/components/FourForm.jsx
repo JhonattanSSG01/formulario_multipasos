@@ -99,12 +99,10 @@ const FourForm = () => {
                   Anterior
                 </Link>
                 {values.phoneNumber && values.typeId && values.id ? (
-                  <button type="submit" className="button button-icon">
-                    <Link to="/fiveForm" className="button-link">
-                      Siguiente
-                    </Link>
+                  <Link to="/fiveForm" className="button button-icon">
+                    Siguiente
                     <BsArrowBarRight className="icon" />
-                  </button>
+                  </Link>
                 ) : (
                   <button type="submit" className="button button-icon">
                     Siguiente
