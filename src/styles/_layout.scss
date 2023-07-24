@@ -2,7 +2,8 @@
 @use "./components/button" as bt;
 @use "./components/titles" as ti;
 
-.container {
+// Estilos para el contenedor que engloba todo
+.container__all {
   font-family: va.$main-font;
   width: 100vw;
   height: 100vh;
@@ -21,10 +22,8 @@
     bottom: 0;
     z-index: 1;
   }
-  .main-confirm{
-    max-width: 1200px;
-  }
-  main {
+  // Estilos para el contenedor principal de cada formulario
+  &--main {
     width: 100vw;
     margin: auto;
     padding: 1.5rem 1rem;
@@ -38,17 +37,14 @@
     flex-direction: column;
     box-shadow: inset 10px 15px 25px rgba($color: va.$black, $alpha: 0.5);
     z-index: 2;
+    // Se incluye el mixin de los titulos generales
     @include ti.titles();
-    small {
-      margin-left: 0.5rem;
-      font-size: 0.9rem;
-      font-style: italic;
-      vertical-align: middle;
-      color: va.$small;
-    }
+    // Se incluye el mixin de los botones generales
     @include bt.button();
+
+    // Responsive design
     @media only screen and (max-width: 500px) {
       width: 90vw;
     }
-  }
-}
+  };
+};

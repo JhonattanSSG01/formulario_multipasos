@@ -14,8 +14,10 @@ import { FormProvider } from "./context/DataContext";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
+    {/* Contexto que engloba a los hijos para su correcta accesibilidad a los datos */}
     <FormProvider>
-      <div className="container">
+      <div className="container__all">
+        {/* Componente para poder acceder a cada ruta de navegacion entre la app */}
         <RouterProvider exact router={router} />
       </div>
     </FormProvider>

@@ -1,18 +1,21 @@
 @use "../variables" as va;
 
+// Estilos para los radios
 @mixin btnRadio() {
-  .group-radio {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    label {
-      font-size: 0.8rem;
-      font-weight: 600;
-      color: rgba($color: va.$color-link, $alpha: 0.6);
+  .container__all {
+    &--radio {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      label {
+        font-size: 0.8rem;
+        font-weight: 600;
+        color: rgba($color: va.$color-link, $alpha: 0.6);
+      }
+      input[type="radio"] {
+        margin: 0.5rem;
+      }
     }
-    input[type="radio"] {
-      margin: 0.5rem;
-    }
-  }
-}
+  };
+};

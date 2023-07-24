@@ -1,3 +1,4 @@
+// Se imporat todo lo necesario de yup para validar campos de cada input
 import * as Yup from "yup";
 
 export const firstFormSchema = Yup.object().shape({

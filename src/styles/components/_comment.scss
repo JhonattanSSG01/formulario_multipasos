@@ -1,14 +1,18 @@
 @use "../variables" as va;
 
+// Estilos para el textarea
 @mixin comment(){
-  .coment{
-    flex-grow: 1;
-    padding: 1rem .5rem;
-    border: 0;
-    border-radius: 10px;
-    background-color: rgba($color: va.$white, $alpha: .7);
-    &:focus-visible{
-      outline: 2px solid rgba($color: va.$black, $alpha: .5);
+  .container__all{
+    &--comment{
+      flex-grow: 1;
+      padding: 1rem .5rem;
+      border: 0;
+      border-radius: 10px;
+      background-color: rgba($color: va.$white, $alpha: .7);
+      font-family: va.$main-font;
+      &:focus-visible{
+        outline: 2px solid rgba($color: va.$black, $alpha: .5);
+      };
     };
-  };
+  }
 };

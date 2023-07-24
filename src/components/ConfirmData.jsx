@@ -1,15 +1,21 @@
+// Se importa un hook de react para guardar datos y compartirlos entre componentes
 import { useContext } from "react";
+// Componente para la navegavilidad dentro de la app
+import { Link } from "react-router-dom";
+// Contexto donde se realiza la logica para almacenar los datos y guardarlos
 import { DataContext } from "../context/DataContext";
-import { Formik, Form } from "formik";
 
+// Componentes para el manejo de iconos
 import { BiSend } from "react-icons/bi";
 import { IoIosArrowForward } from "react-icons/io";
 import { MdOutlineCancel } from "react-icons/md";
-import { Link } from "react-router-dom";
 
+// Componente de confirmar informacion a enviar
 const ConfirmData = () => {
+    // Se trae los atributos creados en el contexto para obtener los datos
   const { formData } = useContext(DataContext);
 
+  // Funcion para el mensaje y reseteo de los valores
   const onSubmit = () => {
     Swal.fire({
       position: "center",
@@ -24,11 +30,11 @@ const ConfirmData = () => {
   };
 
   return (
-    <main className="main-confirm">
-      <div className="title">
+    <main className="container__all--main" style={{ maxWidth: "1200px" }}>
+      <div className="container__all--title">
         <h2>Datos a confirmar</h2>
       </div>
-      <div className="container-confirm">
+      <div className="container__all--container-confirm">
         <article>
           <details open>
             <summary>
@@ -151,14 +157,19 @@ const ConfirmData = () => {
           </details>
         </article>
       </div>
-      <div className="btn">
-        <Link to="/firstForm" className="button button-icon">
-          <MdOutlineCancel className="icon" />
+      {/* Validar boton para cancelar el envio o envairlo definitivamente */}
+      <div className="container__all--cont-btn">
+        <Link to="/firstForm" className="container__all--cont-btn--button ">
+          <MdOutlineCancel className="container__all--icon" />
           Cancelar
         </Link>
-        <Link to="/" className="button submit button-icon" onClick={onSubmit}>
+        <Link
+          to="/"
+          className="container__all--cont-btn--button container__all--cont-btn--button"
+          onClick={onSubmit}
+        >
           Enviar
-          <BiSend className="icon" />
+          <BiSend className="container__all--icon" />
         </Link>
       </div>
     </main>

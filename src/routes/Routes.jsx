@@ -1,3 +1,4 @@
+// Se importa componente para crear las rutas de navegabilidad
 import { createBrowserRouter } from "react-router-dom";
 
 // Componentes
@@ -6,8 +7,6 @@ import SecondForm from "../components/SecondForm";
 import ThirdForm from "../components/ThirdForm";
 import FourForm from "../components/FourForm";
 import FiveForm from "../components/FiveForm";
-
-import Home from "../pages/Home";
 import NotFound from "../pages/NotFound";
 import App from "../App";
 import ConfirmData from "../components/ConfirmData";

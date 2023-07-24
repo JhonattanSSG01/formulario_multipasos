@@ -1,33 +1,36 @@
 @use "../variables" as va;
 
+// Estilos para los errores generales de validacion
 @mixin error() {
-  .error-message {
-    color: va.$error;
-    font-family: va.$main-font;
-    font-size: clamp(0.6rem, 4vw, 0.9rem);
-    text-align: right;
-    margin-top: 0.4rem;
-    animation: 1s scale-up-center ease-in-out;
+  .container__all {
+    &--error{
+      color: va.$error;
+      font-family: va.$main-font;
+      font-size: clamp(0.6rem, 4vw, 0.9rem);
+      text-align: right;
+      margin-top: 0.4rem;
+      animation: 1s scale-up-center ease-in-out;
 
-    @-webkit-keyframes scale-up-center {
-      0% {
-        -webkit-transform: scale(0.5);
-        transform: scale(0.5);
+      @-webkit-keyframes scale-up-center {
+        0% {
+          -webkit-transform: scale(0.5);
+          transform: scale(0.5);
+        }
+        100% {
+          -webkit-transform: scale(1);
+          transform: scale(1);
+        }
       }
-      100% {
-        -webkit-transform: scale(1);
-        transform: scale(1);
+      @keyframes scale-up-center {
+        0% {
+          -webkit-transform: scale(0.5);
+          transform: scale(0.5);
+        }
+        100% {
+          -webkit-transform: scale(1);
+          transform: scale(1);
+        }
       }
     }
-    @keyframes scale-up-center {
-      0% {
-        -webkit-transform: scale(0.5);
-        transform: scale(0.5);
-      }
-      100% {
-        -webkit-transform: scale(1);
-        transform: scale(1);
-      }
-    }
-  }
-}
+  };
+};

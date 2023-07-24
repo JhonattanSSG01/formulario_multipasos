@@ -5,23 +5,28 @@
 @use "./icon" as ic;
 @use "../variables" as va;
 
-form {
-  fieldset {
-    border: none;
-    display: flex;
-    flex-direction: column;
-    margin: 1rem 0;
-    padding: 0 1rem;
-    .container-icon-input {
+// Estilos para el contenedor del formulario
+.container__all {
+    &--fieldset {
+      border: none;
       display: flex;
-      align-items: center;
-      justify-content: space-between;
-      @include ic.icon(va.$btn-bg);
+      flex-direction: column;
+      margin: 1rem 0;
+      padding: 0 1rem;
+      &-input {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        // Se incluye el mixin de los iconos generales
+        @include ic.icon(va.$btn-bg);
+        // Se incluye el mixin de los inputs generales
+        @include in.input();
+      }
+      // Se incluye el mixin de los labels generales
+      @include la.label();
+      // Se incluye el mixin de los errores generales
+      @include er.error();
+      // Se incluye el mixin del boton radio 
+      @include ra.btnRadio();
     }
-
-    @include la.label();
-    @include in.input();
-    @include er.error();
-    @include ra.btnRadio();
-  }
 }

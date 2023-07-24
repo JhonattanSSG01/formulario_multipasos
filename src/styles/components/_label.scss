@@ -1,5 +1,6 @@
 @use "../variables" as va;
 
+// Estilos para los labels generales
 @mixin label() {
   label, .gender {
     margin: 0.5rem 0 .8rem 0;

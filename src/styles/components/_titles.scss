@@ -1,37 +1,49 @@
 @use "../variables" as va;
 
+// Estilos para los titulos generales
 @mixin titles() {
-  .title {
-    width: 80%;
-    background-color: rgba($color: va.$btn-bg, $alpha: 0.9);
-    margin: auto;
-    text-align: center;
-    text-transform: uppercase;
-    border-radius: 10px;
-    padding: 1rem .5rem;
+  .container__all {
+    &--title {
+      width: 80%;
+      background-color: rgba($color: va.$btn-bg, $alpha: 0.9);
+      margin: auto;
+      text-align: center;
+      text-transform: uppercase;
+      border-radius: 10px;
+      padding: 1rem 0.5rem;
 
-    h1,
-    h2 {
-      font-size: clamp(0.8rem, 4vw, 1.8rem);
-      font-weight: 400;
-      color: va.$white;
-      letter-spacing: 5px;
-      white-space: nowrap;
-      overflow: hidden;
-      animation: writer 3s steps(50) normal both;
-      @keyframes writer {
-        from {
-          width: 0;
-          margin: auto;
+      h1,
+      h2 {
+        font-size: clamp(0.8rem, 4vw, 1.8rem);
+        font-weight: 400;
+        color: va.$white;
+        letter-spacing: 5px;
+        white-space: nowrap;
+        overflow: hidden;
+        animation: writer 3s steps(50) normal both;
+        small {
+          margin-left: 0.5rem;
+          font-size: 0.9rem;
+          font-style: italic;
+          vertical-align: middle;
+          color: va.$small;
         }
-        to {
-          width: 90%;
-          margin: auto;
+
+        @keyframes writer {
+          from {
+            width: 0;
+            margin: auto;
+          }
+          to {
+            width: 90%;
+            margin: auto;
+          }
         }
-      }
-      @media only screen and (max-width: 500px) {
-        text-align: left;
+        // Responsive design
+        @media only screen and (max-width: 500px) {
+          text-align: left;
+        }
       }
     }
-  }
-}
+  };
+};
