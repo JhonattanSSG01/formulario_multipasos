@@ -9,6 +9,7 @@ import { DataContext } from "../context/DataContext";
 import { BiSend } from "react-icons/bi";
 import { IoIosArrowForward } from "react-icons/io";
 import { MdOutlineCancel } from "react-icons/md";
+import { LinkButton } from "../stories/Button/Button";
 
 // Componente de confirmar informacion a enviar
 const ConfirmData = () => {
@@ -159,18 +160,25 @@ const ConfirmData = () => {
       </div>
       {/* Validar boton para cancelar el envio o envairlo definitivamente */}
       <div className="container__all--cont-btn">
-        <Link to="/firstForm" className="container__all--cont-btn--button ">
-          <MdOutlineCancel className="container__all--icon" />
-          Cancelar
-        </Link>
-        <Link
+        {/* // Componente link de storybook */}
+        <LinkButton
+          to="/firstForm"
+          label="Cancelar"
+          primary={true}
+          dir={false}
+          option="cancel"
+          active={false}
+        />
+        {/* // Componente link de storybook */}
+        <LinkButton
           to="/"
-          className="container__all--cont-btn--button container__all--cont-btn--button"
+          label="Enviar"
+          primary={false}
+          dir={true}
+          option="send"
+          active={false}
           onClick={onSubmit}
-        >
-          Enviar
-          <BiSend className="container__all--icon" />
-        </Link>
+        />
       </div>
     </main>
   );

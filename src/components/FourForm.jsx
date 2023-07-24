@@ -15,6 +15,7 @@ import { MdOutlineNumbers } from "react-icons/md";
 import { AiOutlineFieldNumber } from "react-icons/ai";
 import { FaList } from "react-icons/fa";
 import { BsArrowBarRight, BsArrowBarLeft } from "react-icons/bs";
+import { Button, LinkButton } from "../stories/Button/Button";
 
 // Componente del cuarto formulario de la app
 const FourForm = () => {
@@ -116,29 +117,26 @@ const FourForm = () => {
               </fieldset>
               {/* Validar boton si los campos estan llenos correctamente para poder pasar al siguiente formulario */}
               <div className="container__all--cont-btn">
-                <Link
+                {/* // Componente link de storybook */}
+                <LinkButton
                   to="/thirdForm"
-                  className="container__all--cont-btn--button"
-                >
-                  <BsArrowBarLeft className="container__all--cont-btn--icon" />
-                  Anterior
-                </Link>
+                  label="Anterior"
+                  primary={true}
+                  dir={false}
+                  active={true}
+                />
                 {values.phoneNumber && values.typeId && values.id ? (
-                  <Link
+                  // Componente link de storybook
+                  <LinkButton
                     to="/fiveForm"
-                    className="container__all--cont-btn--button"
-                  >
-                    Siguiente
-                    <BsArrowBarRight className="container__all--cont-btn--icon" />
-                  </Link>
+                    label="Siguiente"
+                    primary={true}
+                    dir={true}
+                    active={true}
+                  />
                 ) : (
-                  <button
-                    type="submit"
-                    className="container__all--cont-btn--button"
-                  >
-                    Siguiente
-                    <BsArrowBarRight className="container__all--cont-btn--icon" />
-                  </button>
+                  // Componente button de storybook
+                  <Button label="Siguiente" primary={false} dir={true}></Button>
                 )}
               </div>
             </Form>

@@ -15,6 +15,7 @@ import { IoCalendarNumber } from "react-icons/io5";
 import { GrTechnology } from "react-icons/gr";
 import { BiSolidCommentDetail } from "react-icons/bi";
 import { BsArrowBarRight, BsArrowBarLeft } from "react-icons/bs";
+import { Button, LinkButton } from "../stories/Button/Button";
 
 // Componente del quinto formulario de la app
 const FiveForm = () => {
@@ -104,29 +105,26 @@ const FiveForm = () => {
               </fieldset>
               {/* Validar boton si los campos estan llenos correctamente para poder pasar al siguiente formulario */}
               <div className="container__all--cont-btn">
-                <Link
+                {/* // Componente link de storybook */}
+                <LinkButton
                   to="/fourForm"
-                  className="container__all--cont-btn--button"
-                >
-                  <BsArrowBarLeft className="container__all--cont-btn--icon" />
-                  Anterior
-                </Link>
+                  label="Anterior"
+                  primary={true}
+                  dir={false}
+                  active={true}
+                />
                 {values.date && values.course && values.comment ? (
-                  <Link
+                  // Componente link de storybook
+                  <LinkButton
                     to="/confirm"
-                    className="container__all--cont-btn--button"
-                  >
-                    Siguiente
-                    <BsArrowBarRight className="container__all--cont-btn--icon" />
-                  </Link>
+                    label="Siguiente"
+                    primary={true}
+                    dir={true}
+                    active={true}
+                  />
                 ) : (
-                  <button
-                    type="submit"
-                    className="container__all--cont-btn--button"
-                  >
-                    Siguiente
-                    <BsArrowBarRight className="container__all--cont-btn--icon" />
-                  </button>
+                  // Componente button de storybook
+                  <Button label="Siguiente" primary={false} dir={true}></Button>
                 )}
               </div>
             </Form>

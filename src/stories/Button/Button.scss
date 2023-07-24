@@ -1,13 +1,20 @@
-.btn {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  .button-icon {
+@use "../../styles/variables" as va;
+
+.container__all {
+  &--left {
+    flex-direction: row-reverse;
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-between;
   }
-  .button {
+  &--right {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+  }
+
+  &--button {
     width: 11rem;
     margin-top: 2rem;
     padding: 1rem;
@@ -18,19 +25,42 @@
     overflow: hidden;
     z-index: 1;
     text-align: center;
-    color: #fff;
+    color: va.$white;
+    background-color: va.$btn-bg;
+    box-shadow: 6px 6px 12px va.$btn-bg, -6px -6px 12px va.$btn-bg;
     cursor: pointer;
     letter-spacing: 3px;
     text-decoration: none;
-    text-transform: capitalize;
+    &::before {
+      content: "";
+      width: 0;
+      height: 3.5rem;
+      border-radius: 9999px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-color: va.$btn-bg-hover;
+      transition: 0.5s ease;
+      display: block;
+      z-index: -1;
+    }
+    &:hover::before {
+      width: inherit;
+    }
+    &--primary {
+      background-color: va.$btn-bg;
+      box-shadow: 6px 6px 12px va.$btn-bg, -6px -6px 12px va.$btn-bg;
+    }
+    &--secondary {
+      background-color: va.$btn-bg-hover;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      box-shadow: 6px 6px 12px va.$btn-bg-hover, -6px -6px 12px va.$btn-bg-hover;
+      background-color: va.$btn-bg-hover;
+      &:hover {
+        color: va.$btn-bg;
+      }
+    }
   }
-}
-
-.btn-primary {
-  background-color: #3b101f;
-  box-shadow: 6px 6px 12px #3b101f, -6px -6px 12px #3b101f;
-}
-.btn-secondary {
-  background-color: #9f3645;
-  box-shadow: 6px 6px 12px #9f3645, -6px -6px 12px #9f3645;
 }

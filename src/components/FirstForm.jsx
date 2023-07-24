@@ -17,7 +17,7 @@ import { TbListNumbers } from "react-icons/tb";
 import { BsArrowBarRight } from "react-icons/bs";
 
 // Importamos el componente mas reutilzado con storybook
-import { Button } from "../stories/Button/Button";
+import { Button, LinkButton } from "../stories/Button/Button";
 
 
 // Componente del primer formulario de la app
@@ -113,16 +113,17 @@ const FirstForm = () => {
               {/* Validar boton si los campos estan llenos correctamente para poder pasar al siguiente formulario */}
               <div className="container__all--cont-btn">
                 {values.firstName && values.lastName && values.age ? (
-                  <Link
+                  // Componente link de storybook
+                  <LinkButton
                     to="/secondForm"
-                    className="container__all--cont-btn--button "
-                  >
-                    Siguiente
-                    <BsArrowBarRight className="container__all--icon" />
-                  </Link>
+                    label="Siguiente"
+                    primary={true}
+                    dir={true}
+                    active={true}
+                  />
                 ) : (
                   // Componente button de storybook
-                  <Button label="siguiente" primary="false"></Button>
+                  <Button label="Siguiente" primary={false} dir={true}></Button>
                 )}
               </div>
             </Form>

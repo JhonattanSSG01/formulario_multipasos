@@ -15,6 +15,7 @@ import { BiSolidMapPin } from "react-icons/bi";
 import { BiSolidCity } from "react-icons/bi";
 import { BsGenderAmbiguous } from "react-icons/bs";
 import { BsArrowBarRight, BsArrowBarLeft } from "react-icons/bs";
+import { Button, LinkButton } from "../stories/Button/Button";
 
 // Componente del tercer formulario de la app
 const ThirdForm = () => {
@@ -142,29 +143,26 @@ const ThirdForm = () => {
               </fieldset>
               {/* Validar boton si los campos estan llenos correctamente para poder pasar al siguiente formulario */}
               <div className="container__all--cont-btn">
-                <Link
+                {/* // Componente link de storybook */}
+                <LinkButton
                   to="/secondForm"
-                  className="container__all--cont-btn--button"
-                >
-                  <BsArrowBarLeft className="container__all--icon" />
-                  Anterior
-                </Link>
+                  label="Anterior"
+                  primary={true}
+                  dir={false}
+                  active={true}
+                />
                 {values.country && values.city && values.gender ? (
-                  <Link
+                  // Componente link de storybook
+                  <LinkButton
                     to="/fourForm"
-                    className="container__all--cont-btn--button"
-                  >
-                    Siguiente
-                    <BsArrowBarRight className="container__all--icon" />
-                  </Link>
+                    label="Siguiente"
+                    primary={true}
+                    dir={true}
+                    active={true}
+                  />
                 ) : (
-                  <button
-                    type="submit"
-                    className="container__all--cont-btn--button"
-                  >
-                    Siguiente
-                    <BsArrowBarRight className="container__all--icon" />
-                  </button>
+                  // Componente button de storybook
+                  <Button label="Siguiente" primary={false} dir={true}></Button>
                 )}
               </div>
             </Form>

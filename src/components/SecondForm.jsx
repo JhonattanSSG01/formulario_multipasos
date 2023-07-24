@@ -15,6 +15,7 @@ import { IoPersonCircleOutline } from "react-icons/io5";
 import { IoPersonCircle } from "react-icons/io5";
 import { AiTwotoneMail } from "react-icons/ai";
 import { BsArrowBarRight, BsArrowBarLeft } from "react-icons/bs";
+import { Button, LinkButton } from "../stories/Button/Button";
 
 // Componente del segundo formulario de la app
 const SecondForm = () => {
@@ -109,29 +110,26 @@ const SecondForm = () => {
               </fieldset>
               {/* Validar boton si los campos estan llenos correctamente para poder pasar al siguiente formulario */}
               <div className="container__all--cont-btn ">
-                <Link
+                {/* // Componente link de storybook */}
+                <LinkButton
                   to="/firstForm"
-                  className="container__all--cont-btn--button"
-                >
-                  <BsArrowBarLeft className="container__all--icon" />
-                  Anterior
-                </Link>
+                  label="Anterior"
+                  primary={true}
+                  dir={false}
+                  active={true}
+                />
                 {values.email ? (
-                  <Link
+                  // Componente link de storybook
+                  <LinkButton
                     to="/thirdForm"
-                    className="container__all--cont-btn--button"
-                  >
-                    Siguiente
-                    <BsArrowBarRight className="container__all--icon" />
-                  </Link>
+                    label="Siguiente"
+                    primary={true}
+                    dir={true}
+                    active={true}
+                  />
                 ) : (
-                  <button
-                    type="submit"
-                    className="container__all--cont-btn--button"
-                  >
-                    Siguiente
-                    <BsArrowBarRight className="container__all--icon" />
-                  </button>
+                  // Componente button de storybook
+                  <Button label="Siguiente" primary={false} dir={true}></Button>
                 )}
               </div>
             </Form>

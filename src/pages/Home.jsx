@@ -1,5 +1,5 @@
 // Componente para la navegavilidad dentro de la app
-import { Link } from "react-router-dom";
+import { LinkButton } from "../stories/Button/Button";
 
 // Componente principal del inicio de una solicitud de datos
 const Home = () => {
@@ -16,9 +16,7 @@ const Home = () => {
       </p>
       <div className="container__all--cont-btn">
         {/* Redirecciona a un componente especifico mediante una ruta establecida */}
-        <Link to="/firstForm" className="container__all--cont-btn--button">
-          Empezar
-        </Link>
+        <LinkButton to="/firstForm" label="Empezar" primary={true} dir={true} active={true}/>
       </div>
     </div>
   );
