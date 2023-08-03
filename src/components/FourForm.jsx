@@ -65,7 +65,7 @@ const FourForm = () => {
                     </option>
                     <option value="CC">Cédula de Ciudadanía</option>
                     <option value="CE">Cédula de Extranjería</option>
-                    <option value="ID">Docuemnto de Identidad</option>
+                    <option value="ID">Documento de Identidad</option>
                     <option value="PA">Pasaporte</option>
                     <option value="lLC">Licencia de Conducir</option>
                   </Field>
